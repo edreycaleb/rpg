@@ -7,27 +7,28 @@ public class Program
 {
     public static void Main()
     {
-        int s=0, p=0, m=0, b=0, ma=0, sa=0;
+        int s=0, p=0, m=0, b=0, ma=0, sa=0, attks=0;
 
-        var bpw = new List<battle>
+        var hero = new List<battle>
         {
-            new battle{health = 120, speed = 30, sanity = 100, power = 55, bow = 0, magic = 0, mana = 0}
+            new battle("Warrior", 120, 60, 100, 30, 0, 0, 0),
+            new battle("Mage", 100, 10, 60, 45, 0, 60, 100),
+            new battle("Archer", 70, 35, 100, 60, 70, 0, 0)
         };
 
-        var bpm = new List<battle>
+        var villain = new List<battle>
         {
-            new battle{health = 100, speed = 10, sanity = 60, power = 10, bow = 0, magic = 65, mana = 100}
-        };
+            new battle("Bandit", 120, 30, 50, 20, 0, 0, 0),
+            new battle("Ciclope", 500, 300, 40, 15, 0, 0, 0),
+            new battle("Lich", 40, 0, 0, 10, 0, 800, 1001),
+            new battle("Knight", 250, 150, 70, 75, 0, 0, 0),
+            new battle("Dragon", 1001, 1001, 1001, 1001, 0, 1001, 1001),
+            new battle("WarriorLH",200, 120, 100, 50, 0, 0, 0), 
+            new battle("QueenEl",300, 30, 60, 70, 100, 200 , 1001), 
+            new battle("Imperator",1000, 0, 1000, 0, 0, 0 , 0), 
+            new battle("Chef bandits",240, 60, 100, 40, 0, 0 , 0),
+            new battle("Chef of Guard",280, 180, 100, 100, 0, 0 , 0),
 
-        var bpa = new List<battle>
-        {
-            new battle{health = 75, speed = 70, sanity = 100, power = 30, bow = 75, magic = 0, mana = 0}
-        };
-
-
-        var bpv = new List<battle>
-        {
-            new battle{health = 150, speed = 20, sanity = 30, power = 30, bow = 0, magic = 0, mana = 0}
         };
 
 
@@ -37,7 +38,7 @@ public class Program
         Console.Clear();
 
         borda($"Escolha a sua classe, {name}:\n 1 - Guerreiro\n 2 - Mago\n 3 - Arqueiro");
-        int clas = Convert.ToInt16(Console.ReadLine());
+        int clas = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
 
         switch (clas)
@@ -101,7 +102,7 @@ public class Program
                     "Uns viram em você o nascimento de um \u001b[33msímbolo revolucionário\u001b[0m, que lutaria contra as \u001b[35msombras\u001b[0m...",
                     "Outros...",
                     "Um perigo para o império, que agora era governado pelas \u001b[35msombras...\u001b[0m",
-                    "E assim, você precisa decidir o seu destino...",
+                    "E assim, você precisará decidir o seu destino...",
                     $"{name}, você se tornará um \u001b[33mrevolucionário\u001b[0m?",
                     "Ou será parte das \u001b[35msombras\u001b[0m que governam o império?",
                     "\u001b[32mA decisão é sua...\u001b[0m"
@@ -116,6 +117,8 @@ public class Program
         switch (clas)
         {
             case 1:
+                var ha = hero[0];
+
                 Falar("Você chega na capital do império...", 
                     "Proucurando por uma estalagem, para descansar da viagem de 2 meses...",
                     "Chegando na estalagem, você pega o quarto mais barato...",
@@ -138,7 +141,8 @@ public class Program
                     "1. Confrontar os bandidos e tentar tirar mais informações.",
                     "2. Sair do bar e seguir eles até o destino");
 
-                var option = Convert.ToInt16(Console.ReadLine());
+                var option = Convert.ToInt32(Console.ReadLine());
+                var va = villain[0];
                  switch (option)
                 {
                     case 1:
@@ -151,10 +155,10 @@ public class Program
                             "Uma luta é inevitável..."
                             );
 
-                        while ((bpw.Count > 0 && bpw[0].health > 0) && (bpv.Count > 0 && (bpv[0].health > 0 || (bpv.Count > 1 && bpv[0].health > 0))))
+                        while (va.Health > 0 && ha.Health > 0)
                         { 
-                            borda($"Sua vida: {bpw[0].health}\n",
-                                  $"Vida dos inimigos: {bpv[0].health}",
+                            borda($"Sua vida: {ha.Health}\n",
+                                  $"Vida dos inimigos: {va.Health}",
                                   "\n-------------------------\n",
                                   "Escolha uma ação:",
                                   "1. Corte rápido diagonal (+vel)",
@@ -169,9 +173,8 @@ public class Program
                                           "faz um corte rápido na diagonal em ambos...",
                                           "Causando 35 de dano...");
 
-                                    // Aplica dano aos inimigos existentes
-                                    if (bpv.Count > 0) bpv[0].health -= 35;
-                                    if (bpv.Count > 1) bpv[0].health -= 35;
+                                    
+                                    va.Health -= 35;
                                     s++;
                                     break;
 
@@ -180,8 +183,7 @@ public class Program
                                           "faz um corte forte vertical em ambos...",
                                           "Causando 75 de dano...");
 
-                                    if (bpv.Count > 0) bpv[0].health -= 75;
-                                    if (bpv.Count > 1) bpv[0].health -= 75;
+                                    va.Health -= 75;
                                     p++;
                                     break;
 
@@ -189,8 +191,7 @@ public class Program
                                     Falar("Você fez uma estocada precisa...",
                                           "Causando 50 de dano...");
 
-                                    // Exemplo focando no primeiro inimigo ou ajustando conforme necessário
-                                    if (bpv.Count > 0) bpv[0].health -= 50;
+                                    va.Health -= 50;
                                     break;
 
                                 default:
@@ -198,21 +199,21 @@ public class Program
                                     return;
                             }
 
-                            bpv.RemoveAll(inimigo => inimigo.health <= 0);
+                            
                         }
 
                             if (s >= 3)
                             {
                                 Falar("Você testou sua velocidade muitas vezes, agora seu corpo está mais acostumado e ficando mais leve...",
                                     "+10 de velocidade...");
-                                bpw[0].speed += 10;
+                                ha.Speed += 10;
                             }
 
                             if (p >= 3)
                             {
                                 Falar("Você testou sua força muitas vezes, agora seu corpo está mais rígido e ficando mais forte...",
                                     "+10 de força...");
-                                bpw[0].power += 10;
+                                ha.Power += 10;
                             }
                             Console.Clear();
                             Falar("Você derrotou os bandidos...", "Agora a vida deles está em suas mãos...");
@@ -243,7 +244,7 @@ public class Program
                                         "Ela não parece tão assustadora...", "Ou será que você perdeu o senso de perigo?...",
                                         "Coisas assim não importam agora...",
                                         "Então você entra na torre");
-                                    bpw[0].sanity -= 15;
+                                    va.Sanity -= 15;
                                     break;
                                 case 2:
                                     Falar("Você decide poupar a vida dos bandidos...",

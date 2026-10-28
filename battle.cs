@@ -1,19 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace rpg
+﻿namespace rpg
 {
-    internal class battle
+    public class battle
     {
-        public int health;
-        public int power;
-        public int sanity;
-        public int speed;
-        public int bow;
-        public int magic;
+        public string Name { get; set; }
+        public int Health { get; set; }
+        public int Power { get; set; }
+        public int Sanity { get; set; }
+        public int Speed { get; set; }
+        public int Bow { get; set; }
+        public int Magic { get; set; }
 
-        public int mana;
-        
+        public int Mana { get; set; }
+
+    
+
+    public battle(string name, int health, int power, int sanity, int speed, int bow, int magic, int mana)
+        {
+            Health = health;
+            Power = power;
+            Sanity = sanity;
+            Speed = speed;
+            Bow = bow;
+            Magic = magic;
+            Mana = mana;
+            Name = name;
+        }
+
     }
+
 }
