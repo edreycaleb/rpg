@@ -36,7 +36,7 @@ namespace rpg
                         "1. Confrontar os bandidos e tentar tirar mais informações.",
                         "2. Sair do bar e seguir eles até o destino");
 
-                    var option = Convert.ToInt32(Console.ReadLine());
+                    int option = Convert.ToInt32(Console.ReadLine());
                     switch (option)
                     {
                         case 1:
@@ -67,27 +67,27 @@ namespace rpg
                                     case 1:
                                         T.Falar("Você foi mais rápido que eles...",
                                               "faz um corte rápido na diagonal em ambos...",
-                                              "Causando 35 de dano...");
+                                              "Causando 20 de dano...");
 
 
-                                        Datag.va.Health -= 35;
+                                        Datag.va.Health -= 20;
                                         Datag.s++;
                                         break;
 
                                     case 2:
                                         T.Falar("Você foi mais forte que eles...",
                                               "faz um corte forte vertical em ambos...",
-                                              "Causando 75 de dano...");
+                                              "Causando 50 de dano...");
 
-                                        Datag.va.Health -= 75;
+                                        Datag.va.Health -= 50;
                                         Datag.p++;
                                         break;
 
                                     case 3:
                                         T.Falar("Você fez uma estocada precisa...",
-                                              "Causando 50 de dano...");
+                                              "Causando 35 de dano...");
 
-                                        Datag.va.Health -= 50;
+                                        Datag.va.Health -= 35;
                                         break;
 
                                     default:
@@ -172,8 +172,163 @@ namespace rpg
                     }
                     break;
                 case 2:
-                    T.borda("Você é um Mago, e sua jornada começa agora...");
-                    break;
+                    Datag.ha = Datag.hero[1];
+                    Datag.va = Datag.villain[0];
+                    T.Falar("Antes de você ir embora...",
+                        "Seu pai te dá um mapa e diz:",
+                        "'Onde quer que sua mãe esteja, ela estará com o colar que eu dei a ela'...",
+                        "'Esse colar era especial'...",
+                        "'Feito pelo lendário ferreiro e Rei dos Anões'...",
+                        "'A pedra naquele colar é uma jóia nasílica'...",
+                        "'Uma das últimas que ainda existem'...",
+                        "'Ela tem uma propriedade especial'...",
+                        "'A jóia atrai outras joias para si'...",
+                        "'Mas apenas o Rei Anão possui outra dessa jóia'...",
+                        "'Encontre-o e saberá o que fazer depois...'",
+                        "'Boa sorte, minha criança!'...",
+                        "Você abraça seu pai...",
+                        "E vai na direção das montanhas, onde os anões vivem...",
+                        "...",
+                        "Chegando à base das montanhas...",
+                        "Você encontra um bandido ameaçando uma criança anã...",
+                        "Você decide ajudar a criança...",
+                        "O bandido te vê...",
+                        "Joga a criança para trás dele...",
+                        "E saca a espada para te matar...",
+                        "Surge uma luta entre um Mago e um Bandido...");
+
+                    while (Datag.va.Health > 0 && Datag.ha.Health > 0)
+                    {
+                        T.borda("O que você vai fazer?",
+                       $"Sua vida: {Datag.ha.Health}          Vida do Bandido: {Datag.va.Health}",
+                       $"Sua mana: {Datag.ha.Mana}            Mana do Bandido: {Datag.va.Mana}",
+                       $"Sua sanidade: {Datag.ha.Sanity}      Sanidade do Bandido: {Datag.va.Sanity}",
+                       "\n----------------------------------------------------------------\n",
+                       "1.Magia Elemental (-10 mana)(+magia Elemental)",
+                       "2.Magia Arcana (-20 mana)(+magia Arcana)",
+                       "3.Feitiçaria (- 1 sanidade)(+feitiçaria) - não use");
+                        int option2 = Convert.ToInt32(Console.ReadLine());
+                        switch (option2)
+                        {
+                            case 1:
+                                Console.Clear();
+                                T.Falar("Você utiliza Magia Elemental ...",
+                                    "Você sente o poder da natureza se manifestando em sua mão...",
+                                    "Então, você lança uma rajada de vento no inimigo...",
+                                    "Causando 30 de dano no bandido.");
+                                Datag.va.Health -= 30;
+                                Datag.ha.Mana -= 10;
+                                Datag.mae++;
+                                break;
+                            case 2:
+                                Console.Clear();
+                                T.Falar("Você utiliza Magia Arcana ...",
+                                "Você sente o poder dos ancestrais percorrendo o seu corpo...",
+                                "Então, você acumula o poder de um raio de luz perfurante dos seus dedos...",
+                                "Causando 60 de dano no bandido.");
+                                Datag.va.Health -= 60;
+                                Datag.ha.Mana -= 20;
+                                Datag.maa++;
+                                break;
+                            case 3:
+                                Console.Clear();
+                                T.Falar("Você é invoca um poder que não deveria existir...",
+                                "O poder preenche a sua cabeça...",
+                                "####################################",
+                                "Causando 20 de dano no bandido.");
+                                Datag.va.Health -= 20;
+                                Datag.ha.Sanity -= 1;
+                                Datag.fet++;
+                                break;
+                        }
+                    }
+                    T.Falar("...");
+
+                    if (Datag.mae >= 3)
+                    {
+                        T.Falar("Você testou sua magia elemental muitas vezes, agora a natureza preenche o seu corpo...",
+                            "+10 de magia e +5 de bônus elemental...");
+                        T.Falar("...");
+                        Datag.ha.Magic += 10;
+                    }
+                    if (Datag.maa >= 3)
+                    {
+                        T.Falar("Você testou sua magia arcana muitas vezes, agora a energia dos ancestrais está comtigo...",
+                            "+10 de magia e +5 de bônus arcano...");
+                        T.Falar("...");
+                        Datag.ha.Magic += 10;
+                    }
+                    if (Datag.fet >= 1)
+                    {
+                        T.Falar("Você usou feitiçaria, a ##### está presente em você agora...",
+                            "+30 de bônus de feiticaria...");
+                        T.Falar("...");
+                    }
+
+                    T.Falar("Você derrotou o bandido...",
+                        "A vida dele está nas suas mãos...");
+                    T.borda("O que você vai fazer?",
+                        "1. Matar o bandido",
+                        "2. Deixa-lo viver");
+
+                    int option3 = Convert.ToInt32(Console.ReadLine());
+
+                    if (Datag.fet > 0 && option3 == 2)
+                    {
+                        T.Falar("A escolha não é mais sua...",
+                            "A ##### controla você...",
+                            "Você não consegue evitar...",
+                            "Por que você usou feitiçaria?...",
+                            "Mesmo como o alerta...",
+                            "Agora seu corpo sofre as consequências...",
+                            "Ele se mexe sozinho...",
+                            "Então...");
+                        option3 = 1;
+                    }
+
+                    switch (option3)
+                    {
+                        case 1:
+                            T.Falar("Você olha para o bandido caído no chão...",
+                                "Ele implora por sua vida...",
+                                "Diz que fez isso para sobreviver...",
+                                "Chora por sua mulher e filhos...",
+                                "Você aproxima a sua mão da cabeça dele...",
+                                "Você explode o crânio do bandido...",
+                                "Nem a família iria o reconhecer...",
+                                "Assim que você termina, percebe que tinha alguém olhando o tempo todo...",
+                                "Era a criança...",
+                                "Ela tem medo de você...",
+                                "- 15 de sanidade",
+                                "...",
+                                "Você tenta conversar com ela, mas...",
+                                "O pai dela chega...",
+                                "Com uma comitiva...",
+                                "Nesse momento, você olha para ela...",
+                                "Então ela se revela...",
+                                "'Sou Makala, a princesa Anã...'",
+                                "'Venha! Os anões sempre recompensam aqueles que os ajudam...'",
+                                "'Até mesmo os monstros...'");
+                            break;
+                        case 2:
+                            T.Falar("Você decide poupar o bandido...",
+                                "Ele agradece e promete nunca mais fazer isso de novo...",
+                                "Correndo para longe, atrás de sua família...",
+                                "Então você percebe a criança olhando para você...",
+                                "Ela admira você...",
+                                "...",
+                                "Você tenta conversar com ela, mas...",
+                                "O pai dela chega...",
+                                "Com uma comitiva...",
+                                "Nesse momento, você olha para ela...",
+                                "Então ela se revela...",
+                                "'Sou Makala, a princesa Anã...'",
+                                "'Venha! Os anões sempre recompensam aqueles que os ajudam...'",
+                                "'Ainda mais aqueles bondosos...'");
+                            break;
+                    }
+
+                        break;
                 case 3:
                     T.borda("Você é um Arqueiro, e sua jornada começa agora...");
                     break;
