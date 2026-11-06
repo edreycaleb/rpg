@@ -4,7 +4,7 @@ using System.Text;
 
 namespace rpg
 {
-    internal class scene1
+    public class scene1
     {
         public void cena1()
         {
@@ -330,8 +330,151 @@ namespace rpg
 
                         break;
                 case 3:
-                    T.borda("Você é um Arqueiro, e sua jornada começa agora...");
-                    break;
+                    Datag.va = Datag.villain[0];
+                    Datag.ha = Datag.hero[2];
+                    T.Falar("Então...",
+                    "Com essa dúvida em mente, você decide se aventurar pelo mundo...",
+                    "Assim, você cavalga por semanas...",
+                    "Então chega a uma vila...",
+                    "Vila essa que era bem pobre...",
+                    "Você caminha pela vila...",
+                    "Percebendo que ela estava muito vazia...",
+                    "Então você avista um bandido tentando roubar uma senhora...",
+                    "Você grita:",
+                    "'EI! Deixa ela em paz!'",
+                    "O bandido olha para você, meio surpreso...",
+                    "Confuso ele pergunta:",
+                    "'Quem é você?'",
+                    $"'Eu sou {Datag.name},um viajante, agora deixe essa senhora ir...'",
+                    "'Ata kkkk'",
+                    "'Que susto...'",
+                    "'Achei que você era alguém do império kkkkk'...",
+                    "'Bom...'",
+                    "'Já que não é o caso...'",
+                    "'Você vai morrer hoje...'",
+                    "O bandido saca a espada...",
+                    "Uma luta vai começar...");
+                    while (Datag.va.Health > 0 && Datag.ha.Health > 0)
+                    {
+                        T.borda("O que você vai fazer?",
+                        $"Sua vida: {Datag.ha.Health}           Vida do Bandido: {Datag.va.Health}",
+                        $"Sua velocidade: {Datag.ha.Speed}      Velocidade do Bandido: {Datag.va.Speed}",
+                        "\n----------------------------------------------------------------\n",
+                        "1. Atirar flechas rápidas (+vel)",
+                        "2. Atirar flecha poderosa (+for)",
+                        "3. Atirar flecha precisa");
+
+                        int option4 = Convert.ToInt32(Console.ReadLine());
+
+                        switch (option4)
+                        {
+                            case 1:
+                                T.Falar("Você pega flechas curtas...",
+                                    "Dão menos dano, mas são mais rápidas...",
+                                    "Causando 20 de dano no bandido...");
+                                Datag.va.Health -= 20;
+                                Datag.s++;
+                                break;
+                            case 2:
+                                T.Falar("Você pega uma flecha longa e afiada...",
+                                    "Precisa de muita força, mas causa mais dano...",
+                                    "Causando 35 de dano no bandido...");
+                                Datag.va.Health -= 35;
+                                Datag.p++;
+                                break;
+                            case 3:
+                                if (Datag.cont % 3 == 0)
+                                {
+                                    T.Falar("Você deu uma grande brecha para o bandido...",
+                                        "Ainda não é o momento de usar a flecha reforçada...",
+                                        "Tente outra flecha...",
+                                        "Sofreu 15 de dano...");
+                                    Datag.ha.Health -= 15;
+                                    break;
+                                }
+                                T.Falar("Você pega uma flecha reforçada...",
+                                    "Ela é única...",
+                                    "Feita especialmente pelo seu pai...",
+                                    "Mas você precisa de mais força e velocidade para conseguir usá-la...",
+                                    "Utilize outra flecha...");
+                                Datag.cont++;
+
+                                break;
+
+                        }
+                    }
+
+                    T.Falar("...");
+
+                    if (Datag.s >= 3)
+                    {
+                        T.Falar("Você testou sua velocidade muitas vezes, agora seu corpo está mais leve...",
+                            "+10 de velocidade...");
+                        T.Falar("...");
+                        Datag.ha.Speed += 10;
+                    }
+                    if (Datag.p >= 3)
+                    {
+                        T.Falar("Você testou sua força muitas vezes, agora seu corpo está mais forte...",
+                            "+10 de força...");
+                        T.Falar("...");
+                        Datag.ha.Power += 10;
+                    }
+
+                    T.Falar("Você derrotou o bandido...",
+                        "A vida dele está nas suas mãos...");
+
+                    T.borda("O que você vai fazer?",
+                        "1. Matar o bandido",
+                        "2. Deixa-lo viver");
+                    int option5 = Convert.ToInt32(Console.ReadLine());
+
+                    switch (option5)
+                    {
+                        case 1:
+                            T.Falar("Você olha para o bandido caído no chão...",
+                                "Ele implora por sua vida...",
+                                "Diz que foi obrigado a fazer isso...",
+                                "Chora pedindo piedade...",
+                                "A senhora idosa diz que já foi o suficiente...",
+                                "Mas você não para...",
+                                "Você pega uma flecha...",
+                                "E enfia na cabeça do bandido...",
+                                "A vida dele se esvai...",
+                                "Ele nunca mais verá o Sol...",
+                                "Ou sentir a chuva",
+                                "Nunca mais conseguirá pensar...",
+                                "A existência dele acabou...",
+                                "Você fez isso...",
+                                "...",
+                                "A senhora diz:",
+                                "'ele era apenas um empregado...'",
+                                "'Não tinha necessidade de matá-lo'...",
+                                "'Se quer matar alguém, deveria matar o chefe dele...'",
+                                "'Esse sim merece a morte...'",
+                                "'Você matou apenas um homem que seguia ordens para sobreviver...'",
+                                "'Ele não me mataria...'",
+                                "'Faça algo direito e vá matar quem realmente merece...'",
+                                "'Seu Assassino'",
+                                " - 15 de sanidade");
+                            Datag.ha.Sanity -= 15;
+                            break;
+                        case 2:
+                            T.Falar("Você decide poupar o bandido...",
+                                "Ele agradece e diz que apenas seguia ordens...",
+                                "O verdadeiro bandido ali é o chefe dele...",
+                                "Você sente que deveria conhecer esse tal chefe bandido...",
+                                "'Me leve até ele'...",
+                                "'Ok, me siga'...");
+                       
+                            break;
+                    }
+
+
+
+
+
+                    break;   
             }
         }
     }

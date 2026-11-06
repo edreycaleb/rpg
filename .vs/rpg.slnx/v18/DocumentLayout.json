@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|c:\\users\\edrey caleb\\onedrive\\documentos\\ambiente\\rpg\\scene1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|solutionrelative:scene1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|c:\\users\\edrey caleb\\onedrive\\documentos\\ambiente\\rpg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|c:\\users\\edrey caleb\\onedrive\\documentos\\ambiente\\rpg\\prolog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|solutionrelative:prolog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|c:\\users\\edrey caleb\\onedrive\\documentos\\ambiente\\rpg\\scene1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|solutionrelative:scene1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7BE0335-39A0-3442-08E5-70529A8919AF}|rpg.csproj|c:\\users\\edrey caleb\\onedrive\\documentos\\ambiente\\rpg\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,33 +54,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "scene1.cs",
               "DocumentMoniker": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\scene1.cs",
               "RelativeDocumentMoniker": "scene1.cs",
               "ToolTip": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\scene1.cs",
               "RelativeToolTip": "scene1.cs",
-              "ViewState": "AgIAABIBAAAAAAAAAAAgwNAAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAN0BAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-29T14:49:06.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "prolog.cs",
               "DocumentMoniker": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\prolog.cs",
               "RelativeDocumentMoniker": "prolog.cs",
               "ToolTip": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\prolog.cs",
               "RelativeToolTip": "prolog.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwB8AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwB8AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-29T14:32:06.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -101,7 +101,7 @@
       "FloatingWindowState": {
         "Id": "18fb4501-7cd2-41bd-a4c9-cb9bd114070b",
         "Display": 1,
-        "X": 1,
+        "X": 2,
         "Y": 1,
         "Width": 1534,
         "Height": 814,
@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "battle.cs",
               "ToolTip": "C:\\Users\\Edrey Caleb\\OneDrive\\Documentos\\Ambiente\\rpg\\battle.cs",
               "RelativeToolTip": "battle.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAYwCQAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwCQAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-27T03:21:23.7Z",
               "EditorCaption": ""
