@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace rpg
+﻿namespace rpg
 {
     public class scene1
     {
@@ -12,29 +8,32 @@ namespace rpg
             switch (Datag.clas)
             {
                 case 1:
-                     Datag.ha = Datag.hero[0];
+                    Datag.ha = Datag.hero[0];
 
-                    T.Falar("Você chega na capital do império...",
-                        "Proucurando por uma estalagem, para descansar da viagem de 2 meses...",
+                    T.Falar("...",
+                        "\u001b[38;5;118mDepois de um longo caminho...\u001b[0m",
+                        "Você chega \u001b[94ma capital do Império\u001b[0m...",
+                        "Proucurando por uma estalagem, para descansar da viagem de \u001b[3m2 meses\u001b[0m...",
                         "Chegando na estalagem, você pega o quarto mais barato...",
                         "Então você desce e senta no balcão do bar...",
-                        "Pede uma cerveja e escuta atentamente o que está sendo comentado...",
-                        "'Ficou sabendo o que aconteceu com o grande sábio?...'",
-                        "'Sim, que a esposa dele foi assassinada...'",
-                        "'Essa parte todo mundo sabe, mas você nunca parou para pensar que...'",
-                        "'Como a maga mais poderosa do império foi morta tão facilmente?'",
-                        "'Não faz sentido....'",
-                        "'Exatamente. Por isso, parece que o grande sábio Getúlio está esperando por alguém na torre...'",
-                        "'Dizem que é a pessoa que vai encontrar o assassino...'",
-                        "'Mas ela não morreu há 10 anos?'",
-                        "'Sim, mas estão dizendo por aí que o sábio enlouqueceu...'",
-                        "'Então ele não tá diferenciando ninguém...'",
-                        "'Isso, é aí que podemos pegar um bom dinheiro, se dermos informações falsas aquele velho maluco kkkk ...'");
+                        "Pede uma cerveja e escuta atentamente o que está sendo conversado no bar...",
+                        "\u001b[34m'Ficou sabendo o que aconteceu com o grande sábio?...'\u001b[0m",
+                        "\u001b[32m'Que esposa dele foi assassinada? ...'\u001b[0m",
+                        "\u001b[34m'Não porra, essa parte todo mundo sabe, você nunca parou para pensar...'\u001b[0m",
+                        "\u001b[34m'Como a maga mais poderosa do império foi morta tão facilmente?'\u001b[0m",
+                        "\u001b[32m'Nunca tinha pensado nesse bagulho ...'\u001b[0m",
+                        "\u001b[34m'É por isso, que o velho sábio Getúlio está esperando por alguém na torre...'\u001b[0m",
+                        "\u001b[34m'Tão falando que é a pessoa que vai encontrar o assassino...'\u001b[0m",
+                        "\u001b[32m'Mas ela não morreu há mais de 10 anos?'\u001b[0m",
+                        "\u001b[34m'É disso que eu tô falando, esse velho ficou gagá...'\u001b[0m",
+                        "\u001b[32m'Aquele velho não deve estar reconhecendo nem a mulher morta dele kkkkk...'\u001b[0m",
+                        "\u001b[34m'É aí que podemos pegar um bom dinheiro, só dar algumas informações falsas aquele velho maluco...'\u001b[0m",
+                        "\u001b[34m'Pegamos a recompensa e vamos para zona kkkkkkk ...'\u001b[0m");
 
                     T.borda("Depois de ouvir a conversa, você descobriu algo importante, o que vai fazer?",
                         "\n------------------------------------------------------------------------------\n",
-                        "1. Confrontar os bandidos e tentar tirar mais informações.",
-                        "2. Sair do bar e seguir eles até o destino");
+                        "\u001b[91m\u001b[5m1. Confrontar os bandidos e tentar tirar mais informações.\u001b[0m\u001b[0m",
+                        "\u001b[96m\u001b[5m2. Sair do bar e seguir eles até o destino\u001b[0m\u001b[0m");
 
                     int option = Convert.ToInt32(Console.ReadLine());
                     switch (option)
@@ -44,30 +43,30 @@ namespace rpg
 
                             T.Falar("Você decide confrontar os bandidos e tentar tirar mais informações...",
                                 "Você se aproxima deles e pergunta onde fica a torre...",
-                                "Eles ficam surpresos com a sua ousadia, mandando você se fuder...",
+                                "Eles ficam surpresos com a sua ousadia, mandando \u001b[5mvocê se fuder\u001b[0m...",
                                 "Vocês discutem...",
-                                "Um deles saca a espada...",
-                                "O outro segura a empunhura atrás de você...",
-                                "Uma luta é inevitável..."
+                                "Um deles \u001b[38;5;88msaca a espada\u001b[0m...",
+                                "O outro \u001b[38;5;88msegura a empunhura atrás de você\u001b[0m...",
+                                "\u001b[31mUma luta é inevitável...\u001b[0m"
                                 );
 
                             while (Datag.va.Health > 0 && Datag.ha.Health > 0)
                             {
-                                T.borda($"Sua vida: {Datag.ha.Health}\n",
-                                      $"Vida dos inimigos: {Datag.va.Health}",
+                                T.borda($"Sua vida: \u001b[32m{Datag.ha.Health}\u001b[0m\n",
+                                      $"Vida dos Bandidos: \u001b[38;5;160m{Datag.va.Health}\u001b[0m",
                                       "\n-------------------------\n",
                                       "Escolha uma ação:",
-                                      "1. Corte rápido diagonal (+vel)",
-                                      "2. Corte forte forte vertical (+for)",
-                                      "3. Estocada");
+                                      "\u001b[5m\u001b[38;5;159m1. Corte rápido diagonal (+vel)\u001b[0m\u001b[0m",
+                                      "\u001b[5m\u001b[34m2. Corte forte forte vertical (+for)\u001b[0m\u001b[0m",
+                                      "\u001b[5m\u001b[38;5;33m3. Estocada\u001b[0m\u001b[0m");
 
                                 var action = Convert.ToInt16(Console.ReadLine());
                                 switch (action)
                                 {
                                     case 1:
-                                        T.Falar("Você foi mais rápido que eles...",
-                                              "faz um corte rápido na diagonal em ambos...",
-                                              "Causando 20 de dano...");
+                                        T.Falar("Você foi \u001b[38;5;159m mais rápido\u001b[0m que eles...",
+                                              "faz um \u001b[38;5;159m corte rápido\u001b[0m na diagonal em ambos...",
+                                              "\u001b[38;5;160mCausando 20 de dano...\u001b[0m");
 
 
                                         Datag.va.Health -= 20;
@@ -75,24 +74,31 @@ namespace rpg
                                         break;
 
                                     case 2:
-                                        T.Falar("Você foi mais forte que eles...",
-                                              "faz um corte forte vertical em ambos...",
-                                              "Causando 50 de dano...");
+                                        T.Falar("Você foi \u001b[34m mais forte\u001b[0m que eles...",
+                                              "faz um \u001b[34m corte forte vertical\u001b[0m em ambos...",
+                                              "\u001b[31mCausando 50 de dano...\u001b[0m");
 
                                         Datag.va.Health -= 50;
                                         Datag.p++;
                                         break;
 
                                     case 3:
-                                        T.Falar("Você fez uma estocada precisa...",
-                                              "Causando 35 de dano...");
+                                        T.Falar("\u001b[38;5;33mVocê fez uma estocada precisa...\u001b[0m",
+                                              "\u001b[31mCausando 35 de dano...\u001b[0m");
 
                                         Datag.va.Health -= 35;
                                         break;
 
                                     default:
-                                        T.borda("Opção inválida. Por favor, reinicie o jogo e escolha uma opção válida.");
-                                        return;
+                                        T.borda("Opção inválida.");
+                                        if (Datag.va.Health > 0)
+                                        {
+                                            T.Falar("\u001b[97mVocê errou o ataque e ficou vulnerável...\u001b[0m",
+                                                "\u001b[97mOs inimigos aproveitam a oportunidade e te atacam...\u001b[0m",
+                                                "\u001b[31mVocê sente a dor... \n- 30 de vida\u001b[0m");
+                                            Datag.ha.Health -= 30;
+                                        }
+                                        break;
                                 }
 
 
@@ -112,39 +118,41 @@ namespace rpg
                                 Datag.ha.Power += 10;
                             }
                             Console.Clear();
-                            T.Falar("Você derrotou os bandidos...", "Agora a vida deles está em suas mãos...");
-                            T.borda("Você vai mata-lós (1) ou deixá-los viver (2)?");
+                            T.Falar("\u001b[92mVocê derrotou os bandidos!\u001b[0m", "Agora \u001b[91ma vida\u001b[0m deles está nas suas mãos...");
+                            T.borda("\u001b[31mVocê vai matá-los (1)\u001b[0m ou \u001b[96mdeixá-los viver (2)?\u001b[0m");
                             int decision = Convert.ToInt16(Console.ReadLine());
                             switch (decision)
                             {
                                 case 1:
                                     Console.Clear();
                                    T.Falar("Você coloca um em cima do outro...",
-                                            "Pega a sua espada...",
-                                            "Perfura o peito do primeiro...",
-                                            "Você sente a carne se rompendo e a vida se esvaindo...",
+                                            "\u001b[38;5;240mPega a sua espada...\u001b[0m",
+                                            "\u001b[31mE perfura o peito do primeiro bandido...\u001b[0m",
+                                            "\u001b[38;5;124mVocê sente a carne se rompendo e a vida se esvaindo...\u001b[0m",
                                             "Mesmo assim você continua...",
-                                            "E perfura o coração do segundo...",
-                                            "Aqueles homens nunca mais vão pensar, respirar, sentir...",
-                                            "Assim como a vida era antes de nascerem...",
-                                            "tudo o que viram e sentiram não serviu de nada...",
-                                            "Se serão lembrados ou esquecidos, isso de nada importa para eles agora...",
-                                            "Tudo o que eles tinham foi tirado por você...",
-                                            "Sendo eles bons ou maus, agora são apenas carne morta...",
-                                            "Isso irá te condenar até você encontrar o mesmo destino que eles...",
-                                            "- 15 de sanidade",
-                                            "Você pega o mapa que estava no bolso de um deles...",
-                                            "Parece ser o mapa do caminho até a torre...",
+                                            "\u001b[38;5;124mAté a lâmina alcançar o coração do segundo bandido...\u001b[0m",
+                                            "\u001b[38;5;124mVocê não mostrou piedade, nem mesmo quando eles imploraram por suas vidas...\u001b[0m",
+                                            "\u001b[31mAqueles homens nunca mais vão pensar, respirar, sentir...\u001b[0m",
+                                            "\u001b[31mAssim como a vida era antes de nascerem...\u001b[0m",
+                                            "\u001b[31mtudo o que viram e sentiram não servirá de nada...\u001b[0m",
+                                            "\u001b[31mSe serão lembrados ou esquecidos, isso de nada importa para eles agora...\u001b[0m",
+                                            "\u001b[38;5;124mTudo o que eles tinham foi tirado \u001b[5m\u001b[1mpor você\u001b[0m\u001b[0m...\u001b[0m",
+                                            "\u001b[31mSendo eles bons ou maus, agora são apenas carne morta...\u001b[0m",
+                                            "\u001b[38;5;124mIsso irá te condenar até você encontrar o mesmo destino que eles...\u001b[0m",
+                                            "\u001b[35m- 15 de sanidade\u001b[0m",
+                                            "Você pega \u001b[92mo mapa\u001b[0m que estava no bolso de um deles...",
+                                            "Parece ser \u001b[92mo mapa do caminho\u001b[0m até \u001b[35ma torre\u001b[0m...",
                                             "Mesmo pertubado, você segue em frente...",
-                                            "Enfim chega até a torre...",
-                                            "Ela não parece tão assustadora...", "Ou será que você perdeu o senso de perigo?...",
-                                            "Coisas assim não importam agora...",
-                                            "Então você entra na torre");
+                                            "Enfim chega até\u001b[35m a torre\u001b[0m...",
+                                            "Ela não parece tão assustadora...", "Ou será que você perdeu \u001b[38;5;55mo senso de perigo?\u001b[0m...",
+                                            "\u001b[38;5;208mCoisas assim não importam agora...\u001b[0m",
+                                            "\u001b[32mEntão você entra na torre\u001b[0m");
                                     Datag.va.Sanity -= 15;
                                     break;
                                 case 2:
                                     T.Falar("Você decide poupar a vida dos bandidos...",
-                                        "Ele te dão o mapa do caminho até a torre...",
+                                        "Eles te agradecem de joelhos...",
+                                        "E te dão o mapa da torre, como forma de agradecimento...",
                                         "Com ele, você pode encontrar o caminho para a torre e descobrir o que aconteceu com esse tal Getúlio...",
                                         "Então você vai imediatamente para a torre...",
                                         "Você chega até a torre",
@@ -159,7 +167,7 @@ namespace rpg
                             }
                             break;
                         case 2:
-                            T.borda("Você segue eles...",
+                            T.Falar("Você segue eles...",
                                 "Eles te levam até a base de uma torre na floresta...",
                                 "Depois de montar os mantimentos, eles vão embora...",
                                 "Você está de frente para a torre...",
@@ -167,7 +175,7 @@ namespace rpg
                                 "Mas ainda assim, você decide avançar...");
                             break;
                         default:
-                            T.borda("Opção inválida. Por favor, reinicie o jogo e escolha uma opção válida.");
+                            T.borda("Opção inválida. A vida não tem replay.");
                             return;
                     }
                     break;

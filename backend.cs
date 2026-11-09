@@ -1,4 +1,6 @@
-﻿namespace rpg
+﻿using System.Text.RegularExpressions;
+
+namespace rpg
 {
     public class backend
     {
@@ -18,7 +20,8 @@
                 .Select(l => l.Trim('\r'))
                 .ToList();
 
-            int tamanhoMaximo = todasAsLinhas.Max(l => l.Length);
+            
+            int tamanhoMaximo = todasAsLinhas.Max(l => Regex.Replace(l, @"\x1B\[[0-9;]*[mK]", "").Length);
 
             int margem = 4;
             int larguraCaixa = tamanhoMaximo + margem;
@@ -30,19 +33,21 @@
 
             foreach (var linha in todasAsLinhas)
             {
-                int espacosTotais = larguraCaixa - linha.Length;
+               
+                string linhaLimpa = Regex.Replace(linha, @"\x1B\[[0-9;]*[mK]", "");
+                int espacosTotais = larguraCaixa - linhaLimpa.Length;
                 int espacosEsquerda = espacosTotais / 2;
                 int espacosDireita = espacosTotais - espacosEsquerda;
 
+                
                 string linhaCentralizada = new string(' ', espacosEsquerda) + linha + new string(' ', espacosDireita);
-
                 Console.WriteLine($"║{linhaCentralizada}║");
             }
 
             Console.WriteLine(bordaInferior);
         }
 
-        public void pause()
+    public void pause()
         {
             Console.ReadKey();
             Console.Clear();
