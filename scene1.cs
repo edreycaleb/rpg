@@ -294,9 +294,7 @@
                         option3 = 1;
                     }
 
-                    // 38;2;165;15;25 - vermelho escuro
-                    // 38;2;255;60;60 - vermelho claro
-
+                    
                     switch (option3)
                     {
                         case 1:
@@ -340,74 +338,74 @@
                     }
 
                         break;
-                case 3:
+                case 3:  
                     Datag.va = Datag.villain[0];
                     Datag.ha = Datag.hero[2];
                     T.Falar("Então...",
-                    "Com essa dúvida em mente, você decide se aventurar pelo mundo...",
+                    "Com essa dúvida em mente, você decide \u001b[92mse aventurar pelo mundo...\u001b[0m",
                     "Assim, você cavalga por semanas...",
-                    "Então chega a uma vila...",
-                    "Vila essa que era bem pobre...",
+                    "Então chega \u001b[38;5;137ma uma vila\u001b[0m...",
+                    "Vila essa que era \u001b[38;2;85;107;47mbem pobre\u001b[0m...",
                     "Você caminha pela vila...",
-                    "Percebendo que ela estava muito vazia...",
-                    "Então você avista um bandido tentando roubar uma senhora...",
+                    "Percebendo que ela estava \u001b[38;5;195mmuito vazia\u001b[0m...",
+                    "Então você avista \u001b[38;2;255;60;60mum bandido\u001b[0m tentando roubar uma senhora...",
                     "Você grita:",
-                    "'EI! Deixa ela em paz!'",
-                    "O bandido olha para você, meio surpreso...",
+                    "\u001b[38;2;255;220;30m'EI! Deixa ela em paz!'\u001b[0m",
+                    "\u001b[91mO bandido olha para você\u001b[0m, meio surpreso...",
                     "Confuso ele pergunta:",
-                    "'Quem é você?'",
-                    $"'Eu sou {Datag.name},um viajante, agora deixe essa senhora ir...'",
-                    "'Ata kkkk'",
-                    "'Que susto...'",
-                    "'Achei que você era alguém do império kkkkk'...",
-                    "'Bom...'",
-                    "'Já que não é o caso...'",
-                    "'Você vai morrer hoje...'",
-                    "O bandido saca a espada...",
-                    "Uma luta vai começar...");
+                    "\u001b[38;2;250;145;145m'Quem é você?'\u001b[0m",
+                    $"\u001b[38;2;255;220;30m'Eu sou {Datag.name},um viajante, agora deixe essa senhora ir...'\u001b[0m",
+                    "\u001b[38;2;250;145;145m'Ata kkkk'\u001b[0m",
+                    "\u001b[38;2;250;145;145m'Que susto...'\u001b[0m",
+                    "\u001b[38;2;250;145;145m'Achei que você era alguém do império kkkkk'...\u001b[0m",
+                    "\u001b[38;2;250;145;145m'Bom...'\u001b[0m",
+                    "\u001b[38;2;250;145;145m'Já que não é o caso...'\u001b[0m",
+                    "\u001b[38;2;250;145;145m'Você vai morrer hoje...'\u001b[0m",
+                    "O bandido \u001b[31msaca a espada\u001b[0m...",
+                    "\u001b[38;2;255;60;60mUma luta vai começar...\u001b[0m");
                     while (Datag.va.Health > 0 && Datag.ha.Health > 0)
                     {
                         T.borda("O que você vai fazer?",
-                        $"Sua vida: {Datag.ha.Health}           Vida do Bandido: {Datag.va.Health}",
-                        $"Sua velocidade: {Datag.ha.Speed}      Velocidade do Bandido: {Datag.va.Speed}",
+                        $"Sua vida: \u001b[92m{Datag.ha.Health}\u001b[0m           Vida do Bandido: \u001b[38;5;160m{Datag.va.Health}\u001b[0m",
+                        $"Sua velocidade: \u001b[96m{Datag.ha.Speed}\u001b[0m      Velocidade do Bandido: \u001b[94m{Datag.va.Speed}\u001b[0m",
                         "\n----------------------------------------------------------------\n",
-                        "1. Atirar flechas rápidas (+vel)",
-                        "2. Atirar flecha poderosa (+for)",
-                        "3. Atirar flecha precisa");
+                        "\u001b[5m\u001b[38;5;159m1. Atirar flechas rápidas (+vel)\u001b[0m\u001b[0m",
+                        "\u001b[5m\u001b[38;5;196m2. Atirar flecha poderosa (+for)\u001b[0m\u001b[0m",
+                        "\u001b[5m\u001b[38;5;231m3. Atirar flecha precisa\u001b[0m\u001b[0m");
 
                         int option4 = Convert.ToInt32(Console.ReadLine());
 
                         switch (option4)
                         {
                             case 1:
-                                T.Falar("Você pega flechas curtas...",
-                                    "Dão menos dano, mas são mais rápidas...",
-                                    "Causando 20 de dano no bandido...");
+                                T.Falar("Você pega \u001b[38;5;159mas flechas curtas\u001b[0m...",
+                                    "Dão menos dano, \u001b[38;5;195mmas são mais rápidas\u001b[0m...",
+                                    "\u001b[38;2;165;15;25mCausando 20 de dano no bandido\u001b[0m");
                                 Datag.va.Health -= 20;
                                 Datag.s++;
                                 break;
                             case 2:
-                                T.Falar("Você pega uma flecha longa e afiada...",
-                                    "Precisa de muita força, mas causa mais dano...",
-                                    "Causando 35 de dano no bandido...");
+                                T.Falar("Você pega uma \u001b[38;5;196mflecha longa e afiada\u001b[0m...",
+                                    "Precisa de muita força, \u001b[91mmas causa mais dano\u001b[0m...",
+                                    "\u001b[38;2;165;15;25mCausando 35 de dano no bandido\u001b[0m");
                                 Datag.va.Health -= 35;
                                 Datag.p++;
                                 break;
                             case 3:
                                 if (Datag.cont % 3 == 0)
                                 {
-                                    T.Falar("Você deu uma grande brecha para o bandido...",
-                                        "Ainda não é o momento de usar a flecha reforçada...",
-                                        "Tente outra flecha...",
-                                        "Sofreu 15 de dano...");
+                                    T.Falar("\u001b[38;2;255;60;60mVocê deu uma grande brecha para o bandido...\u001b[0m",
+                                        "\u001b[97mAinda não é o momento de usar a flecha reforçada...\u001b[0m",
+                                        "\u001b[38;5;221mTente outra flecha...\u001b[0m",
+                                        "\u001b[38;2;165;15;25mVocê sofreu 15 de dano\u001b[0m");
                                     Datag.ha.Health -= 15;
                                     break;
                                 }
-                                T.Falar("Você pega uma flecha reforçada...",
-                                    "Ela é única...",
-                                    "Feita especialmente pelo seu pai...",
-                                    "Mas você precisa de mais força e velocidade para conseguir usá-la...",
-                                    "Utilize outra flecha...");
+                                T.Falar("Você pega uma \u001b[38;5;231mflecha reforçada\u001b[0m...",
+                                    "\u001b[38;2;230;245;255mEla é única...\u001b[0m",
+                                    "Feita mespecialmente pelo \u001b[38;5;159mseu pai\u001b[0m...",
+                                    "Mas você precisa de \u001b[38;5;196mmais força\u001b[0m e \u001b[38;5;159mvelocidade\u001b[0m para conseguir usá-la...",
+                                    "\u001b[38;2;250;145;145mUtilize outra flecha\u001b[0m");
                                 Datag.cont++;
 
                                 break;
@@ -419,64 +417,65 @@
 
                     if (Datag.s >= 3)
                     {
-                        T.Falar("Você testou sua velocidade muitas vezes, agora seu corpo está mais leve...",
-                            "+10 de velocidade...");
+                        T.Falar("Você testou sua \u001b[38;5;159mvelocidade muitas vezes\u001b[0m, agora seu \u001b[38;5;195mcorpo está mais leve\u001b[0m...",
+                            "\u001b[94m+10 de velocidade\u001b[0m");
                         T.Falar("...");
                         Datag.ha.Speed += 10;
                     }
                     if (Datag.p >= 3)
                     {
-                        T.Falar("Você testou sua força muitas vezes, agora seu corpo está mais forte...",
-                            "+10 de força...");
+                        T.Falar("Você testou sua \u001b[38;5;196mforça muitas vezes\u001b[0m, agora seu \u001b[91mcorpo está mais forte\u001b[0m...",
+                            "\u001b[38;2;255;105;180m+10 de força\u001b[0m");
                         T.Falar("...");
                         Datag.ha.Power += 10;
                     }
 
-                    T.Falar("Você derrotou o bandido...",
-                        "A vida dele está nas suas mãos...");
+                    T.Falar("\u001b[38;5;221mVocê derrotou o bandido!\u001b[0m",
+                        "\u001b[38;2;255;60;60mA vida dele está nas suas mãos\u001b[0m");
 
-                    T.borda("O que você vai fazer?",
-                        "1. Matar o bandido",
-                        "2. Deixa-lo viver");
+                    T.borda("\u001b[38;5;195mO que você vai fazer?\u001b[0m",
+                        "\u001b[5m\u001b[38;2;165;15;25m1. Matar o bandido\u001b[0m\u001b[0m",
+                        "\u001b[5m\u001b[38;2;255;225;25m2. Deixa-lo viver\u001b[0m\u001b[0m");
                     int option5 = Convert.ToInt32(Console.ReadLine());
-
+                    // 38;2;165;15;25 - vermelho escuro
+                    // 38;2;255;60;60 - vermelho claro
                     switch (option5)
                     {
                         case 1:
                             T.Falar("Você olha para o bandido caído no chão...",
-                                "Ele implora por sua vida...",
-                                "Diz que foi obrigado a fazer isso...",
-                                "Chora pedindo piedade...",
-                                "A senhora idosa diz que já foi o suficiente...",
-                                "Mas você não para...",
-                                "Você pega uma flecha...",
-                                "E enfia na cabeça do bandido...",
-                                "A vida dele se esvai...",
-                                "Ele nunca mais verá o Sol...",
-                                "Ou sentir a chuva",
-                                "Nunca mais conseguirá pensar...",
-                                "A existência dele acabou...",
-                                "Você fez isso...",
+                                "\u001b[38;2;255;60;60mEle implora por sua vida...\u001b[0m",
+                                "\u001b[38;2;255;60;60mDiz que foi obrigado a fazer isso...\u001b[0m",
+                                "\u001b[38;2;255;60;60mChora pedindo piedade...\u001b[0m",
+                                "\u001b[38;2;255;60;60mA senhora idosa diz que já foi o suficiente...\u001b[0m",
+                                "\u001b[38;2;165;15;25mMas você não para...\u001b[0m",
+                                "Você puxa a corda do arco e dispara...",
+                                "\u001b[38;2;165;15;25mA ponta de ferro rasga os olhos e perfura o crânio do bandido\u001b[0m",
+                                "\u001b[38;2;255;60;60mA vida dele se esvai...\u001b[0m",
+                                "\u001b[38;2;165;15;25mEle nunca mais verá o Sol...\u001b[0m",
+                                "\u001b[38;2;255;60;60mOu sentir a chuva\u001b[0m",
+                                "\u001b[38;2;255;60;60mNunca mais conseguirá pensar...\u001b[0m",
+                                "\u001b[38;2;255;60;60mA existência dele acabou...\u001b[0m",
+                                "\u001b[38;2;165;15;25mVocê fez isso...\u001b[0m",
                                 "...",
                                 "A senhora diz:",
-                                "'ele era apenas um empregado...'",
-                                "'Não tinha necessidade de matá-lo'...",
-                                "'Se quer matar alguém, deveria matar o chefe dele...'",
-                                "'Esse sim merece a morte...'",
-                                "'Você matou apenas um homem que seguia ordens para sobreviver...'",
-                                "'Ele não me mataria...'",
-                                "'Faça algo direito e vá matar quem realmente merece...'",
-                                "'Seu Assassino'",
-                                " - 15 de sanidade");
+                                "\u001b[38;2;115;130;150m'ele era apenas um empregado...'\u001b[0m",
+                                "\u001b[38;2;115;130;150m'Não tinha necessidade de matá-lo'\u001b[0m...",
+                                "\u001b[38;2;115;130;150m'Se quer matar alguém, devia matar o chefe dele...'\u001b[0m",
+                                "\u001b[38;2;115;130;150m'Esse sim merece a morte...'\u001b[0m",
+                                "\u001b[38;2;115;130;150m'Você apenas matou um homem que seguia ordens para sobreviver...'\u001b[0m",
+                                "\u001b[38;2;115;130;150m'Ele não iria me matar...'\u001b[0m",
+                                "\u001b[38;2;115;130;150m'Faça algo direito e vá matar quem realmente merece...'\u001b[0m",
+                                "\u001b[38;2;165;15;25m'Seu Assassino'\u001b[0m",
+                                "\u001b[38;2;210;105;30m - 15 de sanidade\u001b[0m");
                             Datag.ha.Sanity -= 15;
                             break;
                         case 2:
                             T.Falar("Você decide poupar o bandido...",
-                                "Ele agradece e diz que apenas seguia ordens...",
-                                "O verdadeiro bandido ali é o chefe dele...",
-                                "Você sente que deveria conhecer esse tal chefe bandido...",
-                                "'Me leve até ele'...",
-                                "'Ok, me siga'...");
+                                "Ele chora e diz que \u001b[32mapenas seguia ordens\u001b[0m...",
+                                "O verdadeiro bandido ali é \u001b[38;5;196mo chefe dele\u001b[0m...",
+                                "Você sente que deveria conhecer esse tal \u001b[31mchefe dos bandidos\u001b[0m...",
+                                "\u001b[38;2;255;220;30m'Me leve até ele'\u001b[0m...",
+                                "\u001b[95m'Ok, me siga'\u001b[0m...");
                        
                             break;
                     }

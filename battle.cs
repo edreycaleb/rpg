@@ -34,7 +34,7 @@
         public static battle va { get; set; }
         public static string name { get; set; }
         public static int clas { get; set; }
-        public static int s = 0, p = 0, m = 0, b = 0, mae = 0, sa = 0, attks = 0,maa = 0,fet = 0, cont = 0;
+        public static int s = 0, p = 0, m = 0, b = 0, mae = 0, sa = 0, attks = 0,maa = 0,fet = 0, cont = 1;
 
         public static List<battle> hero = new List<battle>
         {

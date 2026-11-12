@@ -9,11 +9,18 @@
             talk.borda("Qual é o seu nome?");
             Datag.name = Console.ReadLine();
             Console.Clear();
-
-            talk.borda($"Escolha a sua classe, {Datag.name}:\n \u001b[38;5;130m1 - Guerreiro\u001b[0m \n \u001b[95m2 - Mago\u001b[0m \n \u001b[38;5;28m3 - Arqueiro\u001b[0m");
-            Datag.clas = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-
+            if (Datag.name == "Ana Julia")
+            {
+                talk.borda($"Oii momo, escolhe a classe que você quiser mo:\n \u001b[38;5;166m1 - Guerreiro\u001b[0m \n \u001b[95m2 - Mago\u001b[0m \n \u001b[38;5;28m3 - Arqueiro\u001b[0m");
+                Datag.clas = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+            }
+            else
+            {
+                talk.borda($"Escolha a sua classe, {Datag.name}:\n \u001b[38;5;166m1 - Guerreiro\u001b[0m \n \u001b[95m2 - Mago\u001b[0m \n \u001b[38;5;28m3 - Arqueiro\u001b[0m");
+                Datag.clas = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+            }
             switch (Datag.clas)
             { 
                 case 1:
