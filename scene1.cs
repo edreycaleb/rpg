@@ -93,8 +93,8 @@
                                         T.borda("Opção inválida.");
                                         if (Datag.va.Health > 0)
                                         {
-                                            T.Falar("\u001b[97mVocê errou o ataque e ficou vulnerável...\u001b[0m",
-                                                "\u001b[97mOs inimigos aproveitam a oportunidade e te atacam...\u001b[0m",
+                                            T.Falar("\u001b[38;5;195mVocê errou o ataque e ficou vulnerável...\u001b[0m",
+                                                "\u001b[38;5;195mOs inimigos aproveitam a oportunidade e te atacam...\u001b[0m",
                                                 "\u001b[31mVocê sente a dor... \n- 30 de vida\u001b[0m");
                                             Datag.ha.Health -= 30;
                                         }
@@ -146,19 +146,19 @@
                                             "Enfim chega até\u001b[35m a torre\u001b[0m...",
                                             "Ela não parece tão assustadora...", "Ou será que você perdeu \u001b[38;5;55mo senso de perigo?\u001b[0m...",
                                             "\u001b[38;5;208mCoisas assim não importam agora...\u001b[0m",
-                                            "\u001b[32mEntão você entra na torre\u001b[0m");
+                                            "\u001b[35mEntão você entra na torre\u001b[0m");
                                     Datag.va.Sanity -= 15;
                                     break;
                                 case 2:
                                     T.Falar("Você decide poupar a vida dos bandidos...",
                                         "Eles te agradecem de joelhos...",
-                                        "E te dão o mapa da torre, como forma de agradecimento...",
-                                        "Com ele, você pode encontrar o caminho para a torre e descobrir o que aconteceu com esse tal Getúlio...",
-                                        "Então você vai imediatamente para a torre...",
-                                        "Você chega até a torre",
-                                        "Sente uma sensação de perigo...",
-                                        "Mas ao mesmo tempo sente que está mais forte que antes...",
-                                        "Com confiança, você entra na torre...");
+                                        "E te dão \u001b[38;5;220mo mapa da torre\u001b[0m, como forma de agradecimento...",
+                                        "Com ele, você pode encontrar \u001b[32mo caminho para a torre\u001b[0m e descobrir o que aconteceu com esse tal \u001b[0mGetúlio\u001b[0m...",
+                                        "Então você vai imediatamente para \u001b[35ma torre.\u001b[0m..",
+                                        "Você chega até \u001b[35ma torre\u001b[0m",
+                                        "Sente uma sensação de \u001b[31mperigo...\u001b[0m",
+                                        "Mas ao mesmo tempo sente que está m\u001b[38;5;159mais forte que antes\u001b[0m...",
+                                        "Com confiança, você \u001b[35mentra na torre...\u001b[0m");
                                     break;
                                 default:
                                  T.borda("Opção inválida. Por favor, reinicie o jogo e escolha uma opção válida.");
@@ -168,11 +168,11 @@
                             break;
                         case 2:
                             T.Falar("Você segue eles...",
-                                "Eles te levam até a base de uma torre na floresta...",
+                                "Eles te levam até \u001b[32ma base de uma torre\u001b[0m na floresta...",
                                 "Depois de montar os mantimentos, eles vão embora...",
-                                "Você está de frente para a torre...",
-                                "A sensação de perigo é intensa...",
-                                "Mas ainda assim, você decide avançar...");
+                                "Você está de frente para \u001b[35ma torre\u001b[0m...",
+                                "\u001b[31mA sensação de perigo é intensa...\u001b[0m",
+                                "Mas ainda assim, \u001b[35mvocê decide avançar...\u001b[0m");
                             break;
                         default:
                             T.borda("Opção inválida. A vida não tem replay.");
@@ -183,67 +183,67 @@
                     Datag.ha = Datag.hero[1];
                     Datag.va = Datag.villain[0];
                     T.Falar("Antes de você ir embora...",
-                        "Seu pai te dá um mapa e diz:",
-                        "'Onde quer que sua mãe esteja, ela estará com o colar que eu dei a ela'...",
-                        "'Esse colar era especial'...",
-                        "'Feito pelo lendário ferreiro e Rei dos Anões'...",
-                        "'A pedra naquele colar é uma jóia nasílica'...",
-                        "'Uma das últimas que ainda existem'...",
-                        "'Ela tem uma propriedade especial'...",
+                        "Seu pai te dá \u001b[32mum mapa\u001b[0m e diz:",
+                        "'Onde quer que sua mãe esteja, ela estará com \u001b[38;5;220mo colar\u001b[0m que eu dei a ela'...",
+                        "'\u001b[38;2;255;20;147mEsse colar era especial'\u001b[0m...",
+                        $"'Feito pelo {T.rb("Ferreiro Lendário e Rei dos Anões")}'...",
+                        "'A pedra naquele colar é uma \u001b[38;2;255;55;95mjóia nasílica\u001b[0m'...",
+                        "'Uma das \u001b[32múltimas que ainda existem\u001b[0m'...",
+                        "'Ela tem uma \u001b[38;5;159mpropriedade especial\u001b[0m'...",
                         "'A jóia atrai outras joias para si'...",
-                        "'Mas apenas o Rei Anão possui outra dessa jóia'...",
-                        "'Encontre-o e saberá o que fazer depois...'",
-                        "'Boa sorte, minha criança!'...",
+                        $"'Mas apenas {T.rb("o Rei Anão")} possui outra dessa jóia'...",
+                        "'\u001b[32mEncontre-o\u001b[0m e saberá o que fazer depois...'",
+                        "'\u001b[38;5;33mBoa sorte, minha criança!'\u001b[0m",
                         "Você abraça seu pai...",
                         "E vai na direção das montanhas, onde os anões vivem...",
                         "...",
                         "Chegando à base das montanhas...",
-                        "Você encontra um bandido ameaçando uma criança anã...",
-                        "Você decide ajudar a criança...",
-                        "O bandido te vê...",
+                        "Você encontra \u001b[91mum bandido\u001b[0m ameaçando uma criança anã...",
+                        "Você decide \u001b[92majudar a criança\u001b[0m...",
+                        "\u001b[91mO bandido te vê...\u001b[0m",
                         "Joga a criança para trás dele...",
-                        "E saca a espada para te matar...",
-                        "Surge uma luta entre um Mago e um Bandido...");
+                        "E \u001b[91msaca a espada\u001b[0m para te matar...",
+                        "\u001b[95mSurge uma luta entre um Mago e um Bandido...\u001b[0m");
 
                     while (Datag.va.Health > 0 && Datag.ha.Health > 0)
                     {
                         T.borda("O que você vai fazer?",
-                       $"Sua vida: {Datag.ha.Health}          Vida do Bandido: {Datag.va.Health}",
-                       $"Sua mana: {Datag.ha.Mana}            Mana do Bandido: {Datag.va.Mana}",
-                       $"Sua sanidade: {Datag.ha.Sanity}      Sanidade do Bandido: {Datag.va.Sanity}",
+                       $"Sua vida: \u001b[92m{Datag.ha.Health}\u001b[0m        Vida do Bandido: \u001b[38;5;160m{Datag.va.Health}\u001b[0m",
+                       $"Sua mana: \u001b[94m{Datag.ha.Mana}\u001b[0m            Mana do Bandido: \u001b[340m{Datag.va.Mana}\u001b[0m",
+                       $"Sua sanidade: \u001b[38;2;210;105;30m{Datag.ha.Sanity}\u001b[0m      Sanidade do Bandido: \u001b[38;5;179m{Datag.va.Sanity}\u001b[0m",
                        "\n----------------------------------------------------------------\n",
-                       "1.Magia Elemental (-10 mana)(+magia Elemental)",
-                       "2.Magia Arcana (-20 mana)(+magia Arcana)",
-                       "3.Feitiçaria (- 1 sanidade)(+feitiçaria) - não use");
+                       "\u001b[5m\u001b[38;2;40;255;110m1.Magia Elemental\u001b[0m \u001b[38;2;255;60;60m(-10 mana)\u001b[0m \u001b[38;2;152;251;152m(+magia Elemental)\u001b[0m\u001b[0m",
+                       "\u001b[5m\u001b[38;2;65;145;220m2.Magia Arcana\u001b[0m \u001b[38;2;255;60;60m(-20 mana)\u001b[0m \u001b[38;5;159m(+magia Arcana)\u001b[0m\u001b[0m",
+                       "\u001b[5m\u001b[38;2;186;85;211m3.Feitiçaria\u001b[0m \u001b[38;2;255;60;60m(- 1 sanidade)\u001b[0m \u001b[38;2;210;150;255m(+feitiçaria)\u001b[0m - \u001b[1m\u001b[91mnão use\u001b[0m\u001b[0m\u001b[0m");
                         int option2 = Convert.ToInt32(Console.ReadLine());
                         switch (option2)
                         {
                             case 1:
                                 Console.Clear();
-                                T.Falar("Você utiliza Magia Elemental ...",
-                                    "Você sente o poder da natureza se manifestando em sua mão...",
-                                    "Então, você lança uma rajada de vento no inimigo...",
-                                    "Causando 30 de dano no bandido.");
+                                T.Falar("Você utiliza \u001b[38;2;40;255;110mMagia Elemental\u001b[0m ...",
+                                    "Você sente \u001b[38;2;40;255;110mo poder da natureza\u001b[0m se manifestando em sua mão...",
+                                    "Então, você lança \u001b[38;2;152;251;152muma rajada de vento\u001b[0m no inimigo...",
+                                    "\u001b[38;2;255;60;60mCausando 30 de dano no bandido\u001b[0m");
                                 Datag.va.Health -= 30;
                                 Datag.ha.Mana -= 10;
                                 Datag.mae++;
                                 break;
                             case 2:
                                 Console.Clear();
-                                T.Falar("Você utiliza Magia Arcana ...",
-                                "Você sente o poder dos ancestrais percorrendo o seu corpo...",
-                                "Então, você acumula o poder de um raio de luz perfurante dos seus dedos...",
-                                "Causando 60 de dano no bandido.");
+                                T.Falar("Você utiliza \u001b[38;2;65;145;220mMagia Arcana\u001b[0m ...",
+                                "Você sente \u001b[38;2;255;255;255mo poder dos ancestrais\u001b[0m percorrendo o seu corpo...",
+                                "Então, você acumula o poder de\u001b[38;5;159m um raio de luz perfurante\u001b[0m dos seus dedos...",
+                                "\u001b[38;2;255;60;60mCausando 60 de dano no bandido\u001b[0m");
                                 Datag.va.Health -= 60;
                                 Datag.ha.Mana -= 20;
                                 Datag.maa++;
                                 break;
                             case 3:
                                 Console.Clear();
-                                T.Falar("Você é invoca um poder que não deveria existir...",
-                                "O poder preenche a sua cabeça...",
+                                T.Falar("\u001b[38;2;186;85;211mVocê é invoca um poder que não deveria existir...\u001b[0m",
+                                "\u001b[38;2;186;85;211mO poder preenche a sua cabeça...\u001b[0m",
                                 "####################################",
-                                "Causando 20 de dano no bandido.");
+                                "\u001b[38;2;255;60;60mCausando 20 de dano no bandido\u001b[0m");
                                 Datag.va.Health -= 20;
                                 Datag.ha.Sanity -= 1;
                                 Datag.fet++;
@@ -254,85 +254,88 @@
 
                     if (Datag.mae >= 3)
                     {
-                        T.Falar("Você testou sua magia elemental muitas vezes, agora a natureza preenche o seu corpo...",
-                            "+10 de magia e +5 de bônus elemental...");
+                        T.Falar("Você testou sua \u001b[38;2;152;251;152mmagia elemental\u001b[0m muitas vezes, agora a natureza preenche o seu corpo...",
+                            "\u001b[1m+10 de magia e +5 de bônus elemental\u001b[0m");
                         T.Falar("...");
                         Datag.ha.Magic += 10;
                     }
                     if (Datag.maa >= 3)
                     {
-                        T.Falar("Você testou sua magia arcana muitas vezes, agora a energia dos ancestrais está comtigo...",
-                            "+10 de magia e +5 de bônus arcano...");
+                        T.Falar("Você testou sua \u001b[38;5;159mmagia arcana\u001b[0m muitas vezes, agora a energia dos ancestrais está comtigo...",
+                            "\u001b[1m+10 de magia e +5 de bônus arcano\u001b[0m");
                         T.Falar("...");
                         Datag.ha.Magic += 10;
                     }
                     if (Datag.fet >= 1)
                     {
-                        T.Falar("Você usou feitiçaria, a ##### está presente em você agora...",
-                            "+30 de bônus de feiticaria...");
+                        T.Falar("Você usou \u001b[38;2;186;85;211mfeitiçaria\u001b[0m, a \u001b[0m\u001b[0m#####\u001b[0m\u001b[0m está presente em você agora...",
+                            "\u001b[1m+30 de bônus de feiticaria\u001b[0m");
                         T.Falar("...");
                     }
 
-                    T.Falar("Você derrotou o bandido...",
-                        "A vida dele está nas suas mãos...");
-                    T.borda("O que você vai fazer?",
-                        "1. Matar o bandido",
-                        "2. Deixa-lo viver");
+                    T.Falar("\u001b[38;2;240;255;45mVocê derrotou o bandido!\u001b[0m",
+                        "\u001b[92mA vida dele\u001b[0m está \u001b[91mnas suas mãos\u001b[0m...");
+                    T.borda("\u001b[38;5;195mO que você vai fazer?\u001b[0m",
+                        "\u001b[5m\u001b[38;2;165;15;25m1. Matar o bandido\u001b[0m\u001b[0m",
+                        "\u001b[5m\u001b[38;2;165;250;195m2. Deixa-lo viver\u001b[0m\u001b[0m");
 
                     int option3 = Convert.ToInt32(Console.ReadLine());
 
-                    if (Datag.fet > 0 && option3 == 2)
+                    if (Datag.fet > 0 && option3 == 2) 
                     {
-                        T.Falar("A escolha não é mais sua...",
-                            "A ##### controla você...",
-                            "Você não consegue evitar...",
-                            "Por que você usou feitiçaria?...",
-                            "Mesmo como o alerta...",
-                            "Agora seu corpo sofre as consequências...",
-                            "Ele se mexe sozinho...",
-                            "Então...");
+                        T.tremor("\u001b[91mA escolha não é mais sua\u001b[0m",
+                            "\u001b[38;2;186;85;211mA ##### controla você\u001b[0m",
+                            "\u001b[38;2;186;85;211mVocê não consegue evitar\u001b[0m",
+                            "\u001b[38;2;255;60;60mPor que você usou feitiçaria?\u001b[0m",
+                            "\u001b[38;2;255;60;60mEu tentei te avisar\u001b[0m",
+                            "\u001b[38;2;255;60;60mAgora seu corpo vai sofrer as consequências\u001b[0m",
+                            "\u001b[38;2;186;85;211mEle se mexe sozinho\u001b[0m",
+                            "\u001b[38;2;186;85;211mEntão\u001b[0m");
                         option3 = 1;
                     }
+
+                    // 38;2;165;15;25 - vermelho escuro
+                    // 38;2;255;60;60 - vermelho claro
 
                     switch (option3)
                     {
                         case 1:
-                            T.Falar("Você olha para o bandido caído no chão...",
-                                "Ele implora por sua vida...",
-                                "Diz que fez isso para sobreviver...",
-                                "Chora por sua mulher e filhos...",
-                                "Você aproxima a sua mão da cabeça dele...",
-                                "Você explode o crânio do bandido...",
-                                "Nem a família iria o reconhecer...",
-                                "Assim que você termina, percebe que tinha alguém olhando o tempo todo...",
-                                "Era a criança...",
-                                "Ela tem medo de você...",
-                                "- 15 de sanidade",
+                            T.Falar("\u001b[38;2;255;60;60mVocê olha para o bandido caído no chão...\u001b[0m",
+                                "\u001b[38;2;165;15;25mEle implora por sua vida...\u001b[0m",
+                                "\u001b[38;2;165;15;25mDiz que fez isso para sobreviver...\u001b[0m",
+                                "\u001b[38;2;165;15;25mChora por sua mulher e filhos...\u001b[0m",
+                                "\u001b[38;2;255;60;60mVocê aproxima a sua mão da cabeça dele...\u001b[0m",
+                                "\u001b[38;2;165;15;25mExplodindo o crânio do bandido...\u001b[0m",
+                                "\u001b[38;2;165;15;25mNem a família dele iria o reconhecer...\u001b[0m",
+                                "Assim que você termina, percebe que \u001b[38;2;255;60;60mtinha alguém olhando o tempo todo\u001b[0m...",
+                                "\u001b[38;2;165;15;25mEra a criança...\u001b[0m",
+                                "\u001b[38;2;165;15;25mEla sente nojo de você...\u001b[0m",
+                                "\u001b[38;2;210;105;30m- 15 de sanidade\u001b[0m",
                                 "...",
-                                "Você tenta conversar com ela, mas...",
-                                "O pai dela chega...",
-                                "Com uma comitiva...",
+                                "Você tenta conversar com ela, \u001b[92mmas...\u001b[0m",
+                                $"{T.rb("O pai")} dela chega...",
+                                "Com uma comitiva...",    
                                 "Nesse momento, você olha para ela...",
-                                "Então ela se revela...",
-                                "'Sou Makala, a princesa Anã...'",
-                                "'Venha! Os anões sempre recompensam aqueles que os ajudam...'",
-                                "'Até mesmo os monstros...'");
+                                "\u001b[38;2;165;250;195mEntão ela se revela...\u001b[0m",
+                                "'Sou Makala, \u001b[38;2;255;20;147ma princesa Anã\u001b[0m...'",
+                                "'Pode vir, os anões sempre recompensam aqueles que os ajudam...'",
+                                "\u001b[38;2;165;15;25m'Até mesmo os monstros...'\u001b[0m");
                             break;
                         case 2:
                             T.Falar("Você decide poupar o bandido...",
-                                "Ele agradece e promete nunca mais fazer isso de novo...",
-                                "Correndo para longe, atrás de sua família...",
+                                "Ele agradece e promete \u001b[38;2;40;255;110mnunca mais\u001b[0m fazer isso de novo...",
+                                "Correndo para longe, \u001b[38;2;40;255;110matrás de sua família\u001b[0m...",
                                 "Então você percebe a criança olhando para você...",
-                                "Ela admira você...",
+                                "\u001b[38;2;165;250;195mEla admira você...\u001b[0m",
                                 "...",
-                                "Você tenta conversar com ela, mas...",
-                                "O pai dela chega...",
+                                "Você tenta conversar com ela, \u001b[92mmas...\u001b[0m",
+                                $"{T.rb("O pai")} dela chega...",
                                 "Com uma comitiva...",
                                 "Nesse momento, você olha para ela...",
-                                "Então ela se revela...",
-                                "'Sou Makala, a princesa Anã...'",
+                                "\u001b[38;2;165;250;195mEntão ela se revela...\u001b[0m",
+                                "'Sou Makala, \u001b[38;2;255;20;147ma princesa Anã\u001b[0m...'",
                                 "'Venha! Os anões sempre recompensam aqueles que os ajudam...'",
-                                "'Ainda mais aqueles bondosos...'");
+                                "\u001b[38;2;165;15;25m'Ainda mais aqueles de bão coração...'\u001b[0m");
                             break;
                     }
 
