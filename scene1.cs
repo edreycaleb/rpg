@@ -232,7 +232,7 @@
                                 Console.Clear();
                                 T.Falar("Você utiliza \u001b[38;2;65;145;220mMagia Arcana\u001b[0m ...",
                                 "Você sente \u001b[38;2;255;255;255mo poder dos ancestrais\u001b[0m percorrendo o seu corpo...",
-                                "Então, você acumula o poder de\u001b[38;5;159m um raio de luz perfurante\u001b[0m dos seus dedos...",
+                                "Então, você acumula o poder de\u001b[38;5;159m um raio de luz perfurante\u001b[0m na ponta dos seus dedos...",
                                 "\u001b[38;2;255;60;60mCausando 60 de dano no bandido\u001b[0m");
                                 Datag.va.Health -= 60;
                                 Datag.ha.Mana -= 20;
@@ -240,7 +240,7 @@
                                 break;
                             case 3:
                                 Console.Clear();
-                                T.Falar("\u001b[38;2;186;85;211mVocê é invoca um poder que não deveria existir...\u001b[0m",
+                                T.Falar("\u001b[38;2;186;85;211mVocê invoca um poder que não deveria existir...\u001b[0m",
                                 "\u001b[38;2;186;85;211mO poder preenche a sua cabeça...\u001b[0m",
                                 "####################################",
                                 "\u001b[38;2;255;60;60mCausando 20 de dano no bandido\u001b[0m");

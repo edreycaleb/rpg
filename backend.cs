@@ -1,15 +1,18 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace rpg
 {
     public class backend
     {
-        public void Falar(params string[] frases)
+        public void Fala(params string[] frases)
         {
             foreach (var frase in frases)
             {
-                this.borda(frase);
+               this.borda(frase);
+
                 this.pause();
+
             }
         }
 
@@ -95,11 +98,11 @@ namespace rpg
 
                 while (!Console.KeyAvailable)
                 {
-                    // Guarda a posição atual do cursor antes de desenhar
+                    
                     int cursorLeft = Console.CursorLeft;
                     int cursorTop = Console.CursorTop;
 
-                    // Gera a frase com letras tremidas
+                   
                     char[] chars = frase.ToCharArray();
                     for (int c = 0; c < chars.Length; c++)
                     {
@@ -108,26 +111,72 @@ namespace rpg
                     }
                     string fraseTremida = new string(chars);
 
-                    // Desenha a borda com o texto tremido
+                    
                     Console.WriteLine(fraseTremida);
 
                     Thread.Sleep(200);
 
-                    // Reposiciona o cursor e limpa para o próximo frame do tremor
+                    
                     Console.SetCursorPosition(cursorLeft, cursorTop);
                 }
 
-                // Desenha a versão final correta sem tremor antes de o utilizador avançar
+                
                 Console.Clear();
                 Console.WriteLine(frase);
 
-                // Usa o seu método pause() para esperar o clique e limpar para a próxima frase
+                
                 this.pause();
             }
         }
 
 
 
-    }
+        public void Falar(params string[] frases)
+        {
+            foreach (var frase in frases)
+            {
+                Console.WriteLine(bordaUp(frase));
+                Console.Write("║  ");
+                foreach (char letra in frase)
+                {
+                    Console.Write($"{letra}");
+                    Thread.Sleep(50);
+                }
+                Console.Write("  ║");
+                Console.WriteLine("");
+                Console.WriteLine(bordaDown(frase));
+                this.pause();
+            }
+        }
+
+        public static int CalcularLarguraCaixa(params string[] linhas)
+        {
+            var todasAsLinhas = linhas
+                .SelectMany(l => l.Split('\n'))
+                .Select(l => l.Trim('\r'))
+                .ToList();
+
+            int tamanhoMaximo = todasAsLinhas.Max(l => Regex.Replace(l, @"\x1B\[[0-9;]*[mK]", "").Length);
+            int margem = 4;
+            return tamanhoMaximo + margem;
+        }
+
+        
+        public static string bordaUp(params string[] linhas)
+        {
+            int larguraCaixa = CalcularLarguraCaixa(linhas);
+            return "╔" + new string('═', larguraCaixa) + "╗";
+        }
+
+        
+        public static string bordaDown(params string[] linhas)
+        {
+            int larguraCaixa = CalcularLarguraCaixa(linhas);
+            return "╚" + new string('═', larguraCaixa) + "╝";
+        }
+    
+
+
+}
 }
 

@@ -9,5 +9,6 @@ public class Program
         ex1.start();
 
         ex2.cena1();
+
     }
 }
