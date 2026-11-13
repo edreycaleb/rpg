@@ -55,11 +55,11 @@
                         "Você nasceu na capital do \u001b[93mImpério de Pindorama\u001b[0m, \u001b[94ma cidade da Guanabara\u001b[0m...",
                         "\u001b[94mA cidade da Guanabara\u001b[0m é conhecida por ser o \u001b[38;2;255;215;0mcentro comercial\u001b[0m e \u001b[38;5;81mintelectual\u001b[0m do \u001b[93mImpério\u001b[0m...",
                         "É lá que você passou \u001b[33ma sua juventude\u001b[0m, aprendendo com \u001b[38;5;129mos maiores intelectuais\u001b[0m do \u001b[93mImpério\u001b[0m...",
-                        "Seus pais eram \u001b[38;5;93mmagos muito poderosos\u001b[0m, e te incentivaram a seguir o caminho da \u001b[95mmagia\u001b[0m...",
+                        "Seus pais eram \u001b[38;5;93marquimagos muito poderosos\u001b[0m, e te incentivaram a seguir o caminho da \u001b[95mmagia\u001b[0m...",
                         "Porém...", //efeito de lentidão - colocar
                         "\u001b[31mSua mãe foi assassinada...\u001b[0m",
                         "Depois disso, seu pai ficou \u001b[31mdesvastado\u001b[0m...",
-                        "Sua mãe era a maga \u001b[38;5;93mmais forte do império\u001b[0m, ela não poderia ser morta por \u001b[92mqualquer um\u001b[0m...",
+                        "Sua mãe era a arquimaga \u001b[38;5;93mmais forte do império\u001b[0m, ela não poderia ser morta por \u001b[92mqualquer um\u001b[0m...",
                         "\u001b[32mGetúlio\u001b[0m, seu pai, não pôde sair da capital. Por um pedido de \u001b[91mum velho companheiro\u001b[0m...",
                         "\u001b[38;5;195mEntão você precisa agir...\u001b[0m",
                         $"\u001b[32m{Datag.name}, vingue a sua mãe!\u001b[0m"
