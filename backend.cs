@@ -5,19 +5,6 @@ namespace rpg
 {
     public class backend
     {
-        public void Fala(params string[] frases)
-        {
-            foreach (var frase in frases)
-            {
-               this.borda(frase);
-
-                this.pause();
-
-            }
-        }
-
-        
-
         public void borda(params string[] linhas)
         {
             var todasAsLinhas = linhas
@@ -25,31 +12,48 @@ namespace rpg
                 .Select(l => l.Trim('\r'))
                 .ToList();
 
-
             int tamanhoMaximo = todasAsLinhas.Max(l => Regex.Replace(l, @"\x1B\[[0-9;]*[mK]", "").Length);
 
             int margem = 4;
             int larguraCaixa = tamanhoMaximo + margem;
 
+            int larguraTotalVisual = larguraCaixa + 2;
+            int alturaTotalCaixa = todasAsLinhas.Count + 2;
+
+            
+            int posX = Math.Max(0, (Console.WindowWidth - larguraTotalVisual) / 2);
+            int posY = Math.Max(0, (Console.WindowHeight / 3) - (alturaTotalCaixa / 2));
+
+            int linhaAtual = posY;
+
+            
+            Console.SetCursorPosition(posX, linhaAtual++);
             string bordaHorizontal = "╔" + new string('═', larguraCaixa) + "╗";
-            string bordaInferior = "╚" + new string('═', larguraCaixa) + "╝";
+            Console.Write(bordaHorizontal);
 
-            Console.WriteLine(bordaHorizontal);
-
+            
             foreach (var linha in todasAsLinhas)
             {
+                Console.SetCursorPosition(posX, linhaAtual++);
 
                 string linhaLimpa = Regex.Replace(linha, @"\x1B\[[0-9;]*[mK]", "");
                 int espacosTotais = larguraCaixa - linhaLimpa.Length;
                 int espacosEsquerda = espacosTotais / 2;
                 int espacosDireita = espacosTotais - espacosEsquerda;
 
-
                 string linhaCentralizada = new string(' ', espacosEsquerda) + linha + new string(' ', espacosDireita);
-                Console.WriteLine($"║{linhaCentralizada}║");
+                Console.Write($"║{linhaCentralizada}║");
             }
 
-            Console.WriteLine(bordaInferior);
+            
+            Console.SetCursorPosition(posX, linhaAtual++);
+            string bordaInferior = "╚" + new string('═', larguraCaixa) + "╝";
+            Console.Write(bordaInferior);
+
+            
+            Console.SetCursorPosition(posX, linhaAtual + 1);
+            Console.Write("> ");
+
         }
 
         public void pause()
@@ -57,7 +61,6 @@ namespace rpg
             Console.ReadKey();
             Console.Clear();
         }
-
 
         public string rb(string texto)
         {
@@ -129,22 +132,41 @@ namespace rpg
             }
         }
 
-
-
         public void Falar(params string[] frases)
         {
             foreach (var frase in frases)
             {
-                Console.WriteLine(bordaUp(frase));
-                Console.Write("║  ");
+                
+                int larguraCaixa = CalcularLarguraCaixa(frase);
+
+                
+                int larguraTotalVisual = larguraCaixa + 2;
+                int alturaTotalCaixa = 3; 
+
+                int posX = Math.Max(0, (Console.WindowWidth - larguraTotalVisual) / 2);
+                int posY = Math.Max(0, (Console.WindowHeight / 3) - (alturaTotalCaixa / 2));
+
+                
+                Console.SetCursorPosition(posX, posY);
+                Console.Write(new string(' ', larguraTotalVisual));
+
+                
+                Console.SetCursorPosition(posX, posY + 1);
+                Console.Write("  "); 
+
                 foreach (char letra in frase)
                 {
                     Console.Write($"{letra}");
-                    Thread.Sleep(50);
+                    Thread.Sleep(70);
                 }
-                Console.Write("  ║");
-                Console.WriteLine("");
-                Console.WriteLine(bordaDown(frase));
+
+                Console.Write("  ");
+                Console.WriteLine(); 
+
+                
+                Console.SetCursorPosition(posX, posY + 2);
+                Console.Write(new string(' ', larguraTotalVisual));
+
                 this.pause();
             }
         }
@@ -160,23 +182,6 @@ namespace rpg
             int margem = 4;
             return tamanhoMaximo + margem;
         }
-
-        
-        public static string bordaUp(params string[] linhas)
-        {
-            int larguraCaixa = CalcularLarguraCaixa(linhas);
-            return "╔" + new string('═', larguraCaixa) + "╗";
-        }
-
-        
-        public static string bordaDown(params string[] linhas)
-        {
-            int larguraCaixa = CalcularLarguraCaixa(linhas);
-            return "╚" + new string('═', larguraCaixa) + "╝";
-        }
-    
-
-
 }
 }
 

@@ -64,6 +64,7 @@
                                 switch (action)
                                 {
                                     case 1:
+                                        Console.Clear();
                                         T.Falar("Você foi \u001b[38;5;159m mais rápido\u001b[0m que eles...",
                                               "faz um \u001b[38;5;159m corte rápido\u001b[0m na diagonal em ambos...",
                                               "\u001b[38;5;160mCausando 20 de dano...\u001b[0m");
@@ -74,6 +75,7 @@
                                         break;
 
                                     case 2:
+                                        Console.Clear();
                                         T.Falar("Você foi \u001b[34m mais forte\u001b[0m que eles...",
                                               "faz um \u001b[34m corte forte vertical\u001b[0m em ambos...",
                                               "\u001b[31mCausando 50 de dano...\u001b[0m");
@@ -83,6 +85,7 @@
                                         break;
 
                                     case 3:
+                                        Console.Clear();
                                         T.Falar("\u001b[38;5;33mVocê fez uma estocada precisa...\u001b[0m",
                                               "\u001b[31mCausando 35 de dano...\u001b[0m");
 
@@ -90,9 +93,11 @@
                                         break;
 
                                     default:
+                                        Console.Clear();
                                         T.borda("Opção inválida.");
                                         if (Datag.va.Health > 0)
                                         {
+                                            Console.Clear();
                                             T.Falar("\u001b[38;5;195mVocê errou o ataque e ficou vulnerável...\u001b[0m",
                                                 "\u001b[38;5;195mOs inimigos aproveitam a oportunidade e te atacam...\u001b[0m",
                                                 "\u001b[31mVocê sente a dor... \n- 30 de vida\u001b[0m");
@@ -119,7 +124,7 @@
                             }
                             Console.Clear();
                             T.Falar("\u001b[92mVocê derrotou os bandidos!\u001b[0m", "Agora \u001b[91ma vida\u001b[0m deles está nas suas mãos...");
-                            T.borda("\u001b[31mVocê vai matá-los (1)\u001b[0m ou \u001b[96mdeixá-los viver (2)?\u001b[0m");
+                            T.borda("\u001b[31m\u001b[5mVocê vai matá-los (1)\u001b[0m\u001b[0m ou \u001b[5m\u001b[96mdeixá-los viver (2)?\u001b[0m\u001b[0m");
                             int decision = Convert.ToInt16(Console.ReadLine());
                             switch (decision)
                             {
@@ -157,7 +162,7 @@
                                         "Então você vai imediatamente para \u001b[35ma torre.\u001b[0m..",
                                         "Você chega até \u001b[35ma torre\u001b[0m",
                                         "Sente uma sensação de \u001b[31mperigo...\u001b[0m",
-                                        "Mas ao mesmo tempo sente que está m\u001b[38;5;159mais forte que antes\u001b[0m...",
+                                        "Mas ao mesmo tempo sente que está \u001b[38;5;159mmais forte que antes\u001b[0m...",
                                         "Com confiança, você \u001b[35mentra na torre...\u001b[0m");
                                     break;
                                 default:

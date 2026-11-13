@@ -8,6 +8,7 @@
 
             talk.borda("Qual é o seu nome?");
             Datag.name = Console.ReadLine();
+            
             Console.Clear();
             if (Datag.name == "Ana Julia")
             {
@@ -25,6 +26,7 @@
             { 
                 case 1:
                     talk.Falar(
+                        "\u001b[38;5;166mGuerreiro\u001b[0m",
                         "Você nasceu em um vilareijo no interior do \u001b[93mImpério de Pindorama\u001b[0m...",
                         "Passou a infância num \u001b[38;2;210;105;30morfanato\u001b[0m...",
                         $"Recebeu o nome de \u001b[38;5;195m{Datag.name}\u001b[0m daquele que era o dono do orfanato...",
@@ -49,6 +51,7 @@
 
                 case 2:
                     talk.Falar(
+                        "\u001b[95mMago\u001b[0m",
                         "Você nasceu na capital do \u001b[93mImpério de Pindorama\u001b[0m, \u001b[94ma cidade da Guanabara\u001b[0m...",
                         "\u001b[94mA cidade da Guanabara\u001b[0m é conhecida por ser o \u001b[38;2;255;215;0mcentro comercial\u001b[0m e \u001b[38;5;81mintelectual\u001b[0m do \u001b[93mImpério\u001b[0m...",
                         "É lá que você passou \u001b[33ma sua juventude\u001b[0m, aprendendo com \u001b[38;5;129mos maiores intelectuais\u001b[0m do \u001b[93mImpério\u001b[0m...",
@@ -65,6 +68,7 @@
 
                 case 3:
                     talk.Falar(
+                        "\u001b[38;5;28mArqueiro\u001b[0m",
                         "Você nasceu na cidade do carvão e do ferro, \u001b[90mas Minas Gerais\u001b[0m...",
                         "A cidade das \u001b[90mMinas Gerais\u001b[0m é conhecida por ser \u001b[38;5;159mo centro indústrial\u001b[0m do \u001b[93mImpério de Pindorama\u001b[0m...",
                         "Você cresceu em \u001b[38;5;195muma família de ferreiros\u001b[0m...",
